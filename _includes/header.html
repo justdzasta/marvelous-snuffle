@@ -1,5 +1,5 @@
 <header>
-    <div class="nav">
+    <nav>
         {% if page.url == "/" %}
             {% assign menu = site.menus.quick %}
             {% include nav-links.html %}
@@ -9,5 +9,5 @@
 
         {% assign menu = site.menus.header %}
         {% include nav-links.html %}
-    </div>
+    </nav>
 </header>
