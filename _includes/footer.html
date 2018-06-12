@@ -3,10 +3,14 @@
         
     <a href="{{ site.baseurl }}/"><img src="" alt="HS"></a>
     {% assign menu = site.menus.header %}
-    {% include nav-links.html %}
+    {% for item in menu %}
+        <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title | lowercase }}</a>
+    {% endfor %}
 
     {% assign menu = site.menus.quick %}
-    {% include nav-links.html %}
+    {% for item in menu %}
+        <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title | lowercase }}</a>
+    {% endfor %}
 
     </div>
     <div class="notice"><p>{{ site.copyright }}</p></div>

@@ -1,13 +1,18 @@
 <header>
     <nav>
+        <!-- display social links on homepage, else just logo -->
         {% if page.url == "/" %}
             {% assign menu = site.menus.quick %}
-            {% include nav-links.html %}
+            {% for item in menu %}
+                <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title | lowercase }}</a>
+            {% endfor %}
         {% else %}
             <a href="{{ site.baseurl }}/"><img src="" alt="small logo"></a>
         {% endif %}
 
         {% assign menu = site.menus.header %}
-        {% include nav-links.html %}
+        {% for item in menu %}
+            <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title | lowercase }}</a>
+        {% endfor %}
     </nav>
 </header>
